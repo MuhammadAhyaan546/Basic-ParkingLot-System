@@ -1,3 +1,4 @@
+import datetime
 #baseclass
 class vehicle:
     def __init__(self,licenseplate,sizelevel):
@@ -32,3 +33,30 @@ class parkingspot:
             return True
         else:
             return False
+
+    def assignvehicle(self, vehicle):
+        if self.canfit(vehicle):
+            self.vehicle_=vehicle
+            return True
+        else:
+            return False
+
+    def removevehicle(self):
+        vehicle=self.vehicle_
+        self.vehicle_=None
+        return vehicle
+
+#classparkingticket
+class parkingticket:
+    def init(self, ticketid, licenseplate, spotid):
+        self.ticketid = ticketid
+        self.licenseplate = licenseplate
+        self.spotid = spotid
+        self.entrytime = datetime.datetime.now()
+
+#classparkinglot
+class parkinglot:
+    def init(self, numsmallspots,nummediumspots):
+        self._spots=[]
+        self.activetickets=dict()
+        self.ticketcounter=1000
