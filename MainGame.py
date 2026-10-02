@@ -60,3 +60,9 @@ class parkinglot:
         self._spots=[]
         self.activetickets=dict()
         self.ticketcounter=1000
+
+        #initializingsmallspots
+        for i in range(numsmallspots):
+            self._spots.append(parkingspot(f"s-{i+1}",1))
+        for i in range(nummediumspots):
+            self._spots.append(parkingspot(f"m-{i+1}",2))
