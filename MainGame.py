@@ -66,3 +66,21 @@ class parkinglot:
             self._spots.append(parkingspot(f"s-{i+1}",1))
         for i in range(nummediumspots):
             self._spots.append(parkingspot(f"m-{i+1}",2))
+    def parkvehicle(self,vehicle):
+        for m in self._spots:
+            if m.canfit(vehicle):
+                if m.assignvehicle(vehicle):
+                    self.ticketcounter+=1
+                    ticketid=f"T-{self.ticketcounter}"
+                    ticket=parkingticket(ticketid, vehicle.licenseplate, m.spotid)
+                    self.activetickets[ticketid]=(ticket,m)
+                    return ticket
+            else:
+                return None
+    def unparkvehicle(self, ticketid):
+        if ticketid in self.activetickets:
+            ticket,spot=self.activetickets.pop(ticketid)
+            spot.removevehicle()
+            return True
+        else:
+            return False
