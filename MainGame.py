@@ -96,13 +96,19 @@ class parkinglot:
         } 
 
 # --- Main Code Execution ---
-policecar = car(licenseplate="A1OB8H") 
-van = car("4GUJS6") 
-taxi = car("JFI6L8") 
-truck = car("HYUR7J") 
-racecar = car("RTY65O") 
-taxi2 = car("QWC65R") 
 
+policecar = car(licenseplate="A1OB8H")
+van = car("4GUJS6")
+taxi = car("JFI6L8")
+truck = car("HYUR7J")
+racecar = car("RTY65O")
+taxi2 = car("QWC65R")
+#motorcycleobjects
+motorbike=motorcycle("YHSDA6")
+bike = motorcycle("RFEY27")
+deliverybike = motorcycle("EDYD6I")
+cycle = motorcycle("HDSF84")
+motorbike2=motorcycle("NDSJ56")
 LotNRoll = parkinglot(5, 6) 
 print("Initial spots:", LotNRoll.totalavailablespots()) 
 
@@ -115,3 +121,73 @@ else:
     print("Parking Failed")
 
 print("Remaining spots:", LotNRoll.totalavailablespots())
+
+ticket2 = LotNRoll.parkvehicle(racecar)
+if ticket2:
+    print(f"Racecar {racecar.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket2.ticketid} | Spot ID: {ticket2.spotid}")
+else:
+    print("parking failed")
+
+ticket3 = LotNRoll.parkvehicle(policecar)
+if ticket3:
+    print(f"Policecar {policecar.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket3.ticketid} | Spot ID: {ticket3.spotid}")
+else:
+    print("parking failed")
+
+ticket4 = LotNRoll.parkvehicle(taxi2)
+if ticket4:
+    print(f"Taxi2 {taxi2.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket4.ticketid} | Spot ID: {ticket4.spotid}")
+else:
+    print("parking failed")
+
+ticket5 = LotNRoll.parkvehicle(van)
+if ticket5:
+    print(f"Van {van.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket5.ticketid} | Spot ID: {ticket5.spotid}")
+else:
+    print("parking failed")
+
+ticket6 = LotNRoll.parkvehicle(truck)
+if ticket6:
+    print(f"Truck {truck.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket6.ticketid} | Spot ID: {ticket6.spotid}")
+else:
+    print("parking failed")
+
+ticket7 = LotNRoll.parkvehicle(motorbike)
+if ticket7:
+    print(f"Motorbike {motorbike.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket7.ticketid} | Spot ID: {ticket7.spotid}")
+else:
+    print("parking failed")
+
+ticket8 = LotNRoll.parkvehicle(bike)
+if ticket8:
+    print(f"Bike {bike.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket8.ticketid} | Spot ID: {ticket8.spotid}")
+else:
+    print("parking failed")
+
+ticket9 = LotNRoll.parkvehicle(deliverybike)
+if ticket9:
+    print(f"DeliveryBike {deliverybike.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket9.ticketid} | Spot ID: {ticket9.spotid}")
+else:
+    print("parking failed")
+
+    ticket10 = LotNRoll.parkvehicle(cycle)
+if ticket10:
+    print(f"cycle {cycle.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket10.ticketid} | Spot ID: {ticket10.spotid}")
+else:
+    print("parking failed")
+
+    ticket11 = LotNRoll.parkvehicle(motorbike2)
+if ticket11:
+    print(f"MotorBike2 {motorbike2.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket11.ticketid} | Spot ID: {ticket11.spotid}")
+else:
+    print("parking failed")
