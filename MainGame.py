@@ -219,6 +219,8 @@ if LotNRoll.unparkvehicle(ticket1.ticketid):
     print(f"succesfully unparked {ticket1.ticketid}")
 print(LotNRoll.totalavailablespots())
 
+ticket12 = LotNRoll.parkvehicle(garbagetruck)
+
 if ticket12:
     print(f"GarbageTruck {garbagetruck.licenseplate} has been parked!")
     print(f"Ticket ID: {ticket12.ticketid} | Spot ID: {ticket12.spotid}")
