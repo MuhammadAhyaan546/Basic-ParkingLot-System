@@ -109,6 +109,11 @@ bike = motorcycle("RFEY27")
 deliverybike = motorcycle("EDYD6I")
 cycle = motorcycle("HDSF84")
 motorbike2=motorcycle("NDSJ56")
+garbagetruck=car('JGH564')
+tractor=car("HDSF6S")
+limousine=car('GSA5SD')
+minivan=car("HGA5SF")
+forklift=motorcycle("HAS6DA")
 LotNRoll = parkinglot(5, 6) 
 print("Initial spots:", LotNRoll.totalavailablespots()) 
 
@@ -178,16 +183,45 @@ if ticket9:
 else:
     print("parking failed")
 
-    ticket10 = LotNRoll.parkvehicle(cycle)
+ticket10 = LotNRoll.parkvehicle(cycle)
 if ticket10:
     print(f"cycle {cycle.licenseplate} has been parked!")
     print(f"Ticket ID: {ticket10.ticketid} | Spot ID: {ticket10.spotid}")
 else:
     print("parking failed")
 
-    ticket11 = LotNRoll.parkvehicle(motorbike2)
+ticket11 = LotNRoll.parkvehicle(motorbike2)
 if ticket11:
     print(f"MotorBike2 {motorbike2.licenseplate} has been parked!")
     print(f"Ticket ID: {ticket11.ticketid} | Spot ID: {ticket11.spotid}")
 else:
     print("parking failed")
+print(LotNRoll.totalavailablespots())
+
+ticket12 = LotNRoll.parkvehicle(garbagetruck)
+if ticket12:
+    print(f"GarbageTruck {garbagetruck.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket12.ticketid} | Spot ID: {ticket12.spotid}")
+else:
+    print("parking failed")
+if ticket10:
+    if LotNRoll.unparkvehicle(ticket10.ticketid):
+        print(f"Succesfully Unparked {ticket10.ticketid} ")
+print(LotNRoll.totalavailablespots())
+
+if ticket12:
+    print(f"GarbageTruck {garbagetruck.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket12.ticketid} | Spot ID: {ticket12.spotid}")
+else:
+    print("parking failed")
+
+if LotNRoll.unparkvehicle(ticket1.ticketid):
+    print(f"succesfully unparked {ticket1.ticketid}")
+print(LotNRoll.totalavailablespots())
+
+if ticket12:
+    print(f"GarbageTruck {garbagetruck.licenseplate} has been parked!")
+    print(f"Ticket ID: {ticket12.ticketid} | Spot ID: {ticket12.spotid}")
+else:
+    print("parking failed")
+print(LotNRoll.totalavailablespots())

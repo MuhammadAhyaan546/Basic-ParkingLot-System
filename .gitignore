@@ -1,0 +1,7 @@
+# Block VS Code Code Runner temporary files
+tempCodeRunnerFile.py
+tempCodeRunnerFile*
+*/tempCodeRunnerFile
+git add .gitignore
+git commit -m "Add .gitignore to prevent temporary file uploads"
+git push origin main
